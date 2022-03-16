@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>學生資料編輯</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<div th:replace="header :: header"></div>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">學生資料編輯</h1>
+				<div class="card-body">
+					<form th:action="@{/students/{id} (id=${students.id})}" th:object = "${students}" method="POST">
+						<div class="form-group">
+							<label>姓氏</label>
+							<input type="text" class="form-control" name="firstName" th:field = "*{firstName}" placeholder="your first name" />
+						</div>
+						<div class="form-group">
+							<label>名字</label>
+							<input type="text" class="form-control" name="lastName" th:field = "*{lastName}" placeholder="your last name" />
+						</div>
+						<div class="form-group">
+							<label>電子信箱</label>
+							<input type="text" class="form-control" name="email" th:field = "*{email}" placeholder="your email" />
+						</div>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">提交</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>
